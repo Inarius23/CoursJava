@@ -49,8 +49,8 @@ public class Main {
 
     public static boolean isAnagram(String firstStr, String secondStr){
         int search;
-        int count;
-        int count2 ;
+        int count = 0;
+        int count2 = 0;
 
         for(int i=0;i<firstStr.length();i++){
             count = 0;
@@ -67,13 +67,9 @@ public class Main {
                 search = secondStr.indexOf(firstStr.charAt(i), search +  1) ;
                 count2++;
             }
-
-            if(count2 != count){
-                return false;
-            }
         }
 
-        return true;
+        return (count!=count2);
     }
 
     public static String searchAndDelete(String firstStr, String strToDelete){
