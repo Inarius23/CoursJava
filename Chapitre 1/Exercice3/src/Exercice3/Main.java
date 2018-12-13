@@ -19,7 +19,7 @@ public class Main {
         for (String element:array){
             try {
                 average += Integer.parseInt(element);
-            }catch (ParseException e) {
+            }catch (Exception e) {
                 System.out.println(element + " is not a interger");
                 System.out.println("Error : " + e.getMessage());
             }
