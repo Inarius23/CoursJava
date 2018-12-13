@@ -1,6 +1,7 @@
-package exercice2;
+package exercice2; //jamais de chiffre dans les packages!!!!!!!!!!!!!!!!!!!!
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
@@ -8,17 +9,28 @@ import java.time.Instant;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
-        BufferedReader reader = new BufferedReader(new FileReader("fileToRead.txt"));
+        BufferedReader reader = null;
         ArrayList<String> list = new ArrayList<String>();
-        int sizeArrayList;
-        int average;
+        double average;
         String mark;
         Instant start = Instant.now();
         Duration duration;
 
-        setArrayList(list, reader);
+        try{
+            reader = new BufferedReader(new FileReader("fileToRead.txt"));
+        }catch (FileNotFoundException e) {
+            System.out.println(e);
+            System.exit(1);
+        }
+
+        try{
+            setArrayList(list, reader);
+        }catch (IOException e){
+            System.out.println(e);
+        }
+
 
         average = calculateAverage(list);
         System.out.println("average : " + average);
@@ -33,14 +45,13 @@ public class Main {
 
     public static void setArrayList(ArrayList list, BufferedReader reader) throws IOException {
         String line;
-        int count = 0;
         while ((line = reader.readLine()) != null) { //lis le fichier jusqu'à la fin du fichier
             list.add(line);
         }
     }
 
-    public static int calculateAverage(ArrayList list){
-        int average=0;
+    public static double calculateAverage(ArrayList list){
+        double average=0;
         int mark;
 
         for(int i=0;i<list.size();i++) {
@@ -48,7 +59,10 @@ public class Main {
             average += mark;
         }
 
-        return average/list.size();
+        if(list.size() != 0){
+            return average/list.size();
+        }
+        return average;
     }
 
     public static String getStudentMark(ArrayList list, String studentEmail) {
