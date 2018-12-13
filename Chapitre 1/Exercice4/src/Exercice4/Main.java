@@ -1,4 +1,4 @@
-package Exercice4;
+package Exercice4; //jamais de chiffre dans les packages!!!!!!!!!!!!!!!!!!!!
 
 public class Main {
     public static void main(String [] args){//args[0] alphabet && args[1] chaine à tester
@@ -7,15 +7,18 @@ public class Main {
         testString = "abdac";
         String testString2 = new String();
         testString2 = "bd";
+        String newString1 = new String();
 
-        System.out.println("la chaine testString : ");
+        System.out.println("The string testString : " + testString);
         isWellFormed(alphabet.toLowerCase(),testString.toLowerCase());
-        System.out.println("la chaine testString2 : ");
+        System.out.println("The String testString2 : " + testString2);
         isWellFormed(alphabet.toLowerCase(),testString2.toLowerCase());
 
-        System.out.println("les chaines testString et testString2 sont des anagrammes : " + isAnagram(testString,testString2));
+        System.out.println("The String testString and testString2 are anagrams : " + isAnagram(testString,testString2));
 
-        searchAndDelete(testString, testString2);
+        newString1 = searchAndDelete(testString, testString2);
+
+        System.out.println("New String : " + newString1);
     }
 
     public static void isWellFormed (String alphabet, String str){
@@ -36,11 +39,11 @@ public class Main {
         }
     }
 
-    public static void rotateLeft(String str){
+    public static void rotateLeft(int n, String str){
 
     }
 
-    public static void rotateRight(String str){
+    public static void rotateRight(int n, String str){
 
     }
 
@@ -73,11 +76,11 @@ public class Main {
         return true;
     }
 
-    public static void searchAndDelete(String firstStr, String strToDelete){
+    public static String searchAndDelete(String firstStr, String strToDelete){
         if(firstStr.contains(strToDelete)){
-            System.out.println("ma nouvelle chaine : " + firstStr.replace(strToDelete, ""));
+            return firstStr.replace(strToDelete, "");
         }else {
-            System.out.println("la chaine : \"" + firstStr + "\" n'a pas changé");
+            return firstStr;
         }
     }
 }
