@@ -7,7 +7,6 @@ public class Main {
         testString = "abdac";
         String testString2 = new String();
         testString2 = "bd";
-        boolean bool;
 
         System.out.println("la chaine testString : ");
         isWellFormed(alphabet.toLowerCase(),testString.toLowerCase());
