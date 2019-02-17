@@ -18,6 +18,7 @@ public class Main {
         Instant start = Instant.now();
         Duration duration;
 
+
         try{
             reader = new BufferedReader(new FileReader("fileToRead.txt"));
         }catch (FileNotFoundException e) {
