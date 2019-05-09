@@ -32,4 +32,12 @@ public class Cylinder extends Geometry3D{
     public double volume(){
         return Math.PI * this.radius * this.radius * this.height;
     }
+
+    @Override
+    public String toString() {
+        return "Cylinder{" +
+                "radius=" + radius +
+                ", height=" + height +
+                '}';
+    }
 }

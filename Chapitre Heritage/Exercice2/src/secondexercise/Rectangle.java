@@ -1,8 +1,8 @@
 package secondexercise;
 
 public class Rectangle extends Geometry2D{
-    private double lengh;
-    private double height;
+    protected double lengh;
+    protected double height;
 
     public Rectangle(double lengh, double height) {
         this.lengh = lengh;
@@ -31,5 +31,13 @@ public class Rectangle extends Geometry2D{
 
     public double area() {
         return this.lengh * this.height;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "lengh=" + this.lengh +
+                ", height=" + this.height +
+                '}';
     }
 }

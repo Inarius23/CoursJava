@@ -22,4 +22,11 @@ public class Sphere extends Geometry3D{
     public double area(){
         return 4 * Math.PI * this.rayon * this.rayon;
     }
+
+    @Override
+    public String toString() {
+        return "Sphere{" +
+                "rayon=" + rayon +
+                '}';
+    }
 }
