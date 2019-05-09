@@ -1,8 +1,8 @@
 package secondexercise;
-
+import java.math.*;
 public class Ellipsis extends Geometry2D{
-    private double rayonMax;
-    private double rayonMin;
+    public double rayonMax;
+    public double rayonMin;
 
     public Ellipsis(double rayonMaximum, double rayonMinimum) {
         this.rayonMax = rayonMaximum;
